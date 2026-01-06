@@ -5,7 +5,7 @@ import localFont from "next/font/local";
 import { Open_Sans } from "next/font/google";
 import Footer from "@/components/navigation/Footer";
 import { Suspense } from "react";
-import Loading from "./loading";
+
 import PaddingContainer from "@/components/layout/PaddingContainer";
 import Image from "next/image";
 import NextTopLoader from "nextjs-toploader";
@@ -105,9 +105,8 @@ export default function RootLayout({
           <>
             <Navigation locale={lang} />
 
-            <Suspense fallback={<Loading />}>
-              <div className="pt-5 min-h-calc(100vh-300px)">{children}</div>
-            </Suspense>
+            <div className="pt-5 min-h-calc(100vh-300px)">{children}</div>
+
             <Footer locale={lang} />
           </>
         )}
